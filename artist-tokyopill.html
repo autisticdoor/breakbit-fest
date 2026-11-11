@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOKYOPILL — BREAKBIT FEST</title>
+  <meta name="description" content="TOKYOPILL на BREAKBIT FEST: биография, сетлист и дискография. Суббота, 17 июля 2027.">
+
+  <!-- Шрифты Google Fonts: Unbounded (заголовки) и Onest (текст) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS (локально), затем собственный файл custom.css -->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="page d-flex flex-column">
+
+  <header class="header bg-dark text-white" id="top">
+    <nav class="navbar navbar-expand-lg navbar-dark py-3" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand header__logo" href="index.html">BREAKBIT<span class="header__logo-accent">.</span>FEST</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="artists.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Артисты</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="artists.html">Все артисты</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="artists.html?day=fri">Пятница, 16 июля</a></li>
+                <li><a class="dropdown-item" href="artists.html?day=sat">Суббота, 17 июля</a></li>
+                <li><a class="dropdown-item" href="artists.html?day=sun">Воскресенье, 18 июля</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="schedule.html">Расписание</a></li>
+            <li class="nav-item"><a class="nav-link" href="tickets.html">Билеты</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          </ul>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <a class="btn btn-outline-light btn-sm" href="schedule.html#my-lineup">♥ Мой лайнап <span class="badge text-bg-light" data-fav-count>0</span></a>
+            <a class="btn btn-accent" href="tickets.html">Купить билет</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow-1" id="content">
+    <div class="container py-5">
+    <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Главная</a></li><li class="breadcrumb-item"><a href="artists.html">Артисты</a></li><li class="breadcrumb-item active" aria-current="page">TOKYOPILL</li></ol></nav>
+
+      <div class="row g-4 g-lg-5 align-items-start">
+        <div class="col-12 col-md-6 col-lg-5">
+          <div class="photo photo--large rounded-4" data-photo="tokyopill">
+          <span class="photo__fallback">TP</span>
+          <img class="photo__img" src="images/artists/tokyopill.jpg" alt="TOKYOPILL — фото артиста" loading="lazy" onerror="this.remove()">
+        </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <p class="mb-2"><span class="badge artist-card__day me-1">Drum & Bass</span><span class="badge artist-card__day me-1">Jungle</span><span class="badge artist-card__day me-1">Breakcore</span></p>
+          <h1 class="artist-title text-uppercase mb-3">TOKYOPILL</h1>
+          <p class="lead">Атмосферный драм-н-бейс и джангл в духе Serial Experiments Lain.</p>
+          <dl class="row g-3 mb-4"><div class="col-12 col-sm-6"><dt class="fact__label">День</dt><dd class="fact__value">Суббота, 17 июля</dd></div><div class="col-12 col-sm-6"><dt class="fact__label">Время</dt><dd class="fact__value">21:00–22:30</dd></div><div class="col-12 col-sm-6"><dt class="fact__label">Жанры</dt><dd class="fact__value">DnB, джангл, брейккор</dd></div><div class="col-12 col-sm-6"><dt class="fact__label">Сет</dt><dd class="fact__value">90 минут, сцена Main</dd></div><div class="col-12 col-sm-6"><dt class="fact__label">Ключевой релиз</dt><dd class="fact__value">Serial Experiments PAIN (2022)</dd></div></dl>
+          <div class="d-flex flex-wrap gap-2">
+            <a class="btn btn-primary btn-lg" href="tickets.html">Купить билет</a>
+            <button class="btn btn-outline-primary btn-lg fav-toggle" type="button" data-fav="tokyopill" aria-pressed="false">♥ <span data-fav-text>В мой лайнап</span></button>
+            <button class="btn btn-outline-primary btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#remindModal" data-artist="TOKYOPILL">Напомнить о сете</button>
+          </div>
+        </div>
+      </div>
+
+      <ul class="nav nav-tabs artist-tabs mt-5" id="artistTabs" role="tablist">
+        <li class="nav-item" role="presentation"><button class="nav-link active" id="tab-bio" data-bs-toggle="tab" data-bs-target="#pane-bio" type="button" role="tab" aria-controls="pane-bio" aria-selected="true">Биография</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="tab-set" data-bs-toggle="tab" data-bs-target="#pane-set" type="button" role="tab" aria-controls="pane-set" aria-selected="false">Сетлист</button></li>
+        <li class="nav-item" role="presentation"><button class="nav-link" id="tab-disc" data-bs-toggle="tab" data-bs-target="#pane-disc" type="button" role="tab" aria-controls="pane-disc" aria-selected="false">Дискография</button></li>
+      </ul>
+      <div class="tab-content pt-4">
+        <div class="tab-pane fade show active" id="pane-bio" role="tabpanel" aria-labelledby="tab-bio" tabindex="0"><div class="row"><div class="col-12 col-lg-9"><p>TOKYOPILL — продюсер, работающий в драм-н-бейсе, джангле и смежных андеграундных стилях. Его часто принимают за брейккор: тяжёлые брейки сочетаются с воздушными, гейтированными пэдами и лоу-фай шумом.</p><p>Широкую известность принёс трек «E t h e r e a l» (первоначальное название — «M e t a d a t a»), разошедшийся в TikTok вместе с эстетикой аниме «Serial Experiments Lain». В дискографии — EP «Welcome To The Wired!» (2021), «Serial Experiments PAIN» и «Dopamine Online» (2022), а также совместный трек «turn off» с sewerslvt.</p><p>Субботний хедлайнер закроет вечер плотным сетом: от атмосферного джангла к жёсткому брейккору.</p></div></div></div>
+        <div class="tab-pane fade" id="pane-set" role="tabpanel" aria-labelledby="tab-set" tabindex="0">
+          <div class="row"><div class="col-12 col-lg-9">
+            <ol class="list-group list-group-numbered setlist"><li class="list-group-item d-flex justify-content-between align-items-start gap-3"><span>E t h e r e a l</span><span class="small opacity-75 text-end">Сингл</span></li><li class="list-group-item d-flex justify-content-between align-items-start gap-3"><span>End of TOKYO</span><span class="small opacity-75 text-end">Сингл</span></li><li class="list-group-item d-flex justify-content-between align-items-start gap-3"><span>Heaven&#x27;s ULTRA</span><span class="small opacity-75 text-end">Сингл</span></li><li class="list-group-item d-flex justify-content-between align-items-start gap-3"><span>turn off (feat. sewerslvt)</span><span class="small opacity-75 text-end">Сингл</span></li><li class="list-group-item d-flex justify-content-between align-items-start gap-3"><span>Избранное из Welcome To The Wired!</span><span class="small opacity-75 text-end">Welcome To The Wired!</span></li><li class="list-group-item d-flex justify-content-between align-items-start gap-3"><span>Избранное из Serial Experiments PAIN</span><span class="small opacity-75 text-end">Serial Experiments PAIN</span></li><li class="list-group-item d-flex justify-content-between align-items-start gap-3"><span>Избранное из Dopamine Online</span><span class="small opacity-75 text-end">Dopamine Online</span></li></ol>
+            <p class="small mt-3 mb-0">Программа сета может измениться: артисты играют новые версии и неизданные треки.</p>
+          </div></div>
+        </div>
+        <div class="tab-pane fade" id="pane-disc" role="tabpanel" aria-labelledby="tab-disc" tabindex="0"><div class="row g-4"><div class="col-12 col-md-6"><article class="card h-100 border-2 border-dark bg-transparent rounded-4"><div class="card-body">
+            <div class="d-flex justify-content-between align-items-start gap-2"><h3 class="h5 mb-1">Welcome To The Wired!</h3><span class="badge text-bg-dark">2021</span></div>
+            <p class="small fw-bold mb-2">EP</p><p class="mb-0">Гибрид брейкбита и джангла, с которого началась известность.</p></div></article></div><div class="col-12 col-md-6"><article class="card h-100 border-2 border-dark bg-transparent rounded-4"><div class="card-body">
+            <div class="d-flex justify-content-between align-items-start gap-2"><h3 class="h5 mb-1">Serial Experiments PAIN</h3><span class="badge text-bg-dark">2022</span></div>
+            <p class="small fw-bold mb-2">Релиз</p><p class="mb-0">Более жёсткие брейккор-фрагменты и аниме-эстетика.</p></div></article></div><div class="col-12 col-md-6"><article class="card h-100 border-2 border-dark bg-transparent rounded-4"><div class="card-body">
+            <div class="d-flex justify-content-between align-items-start gap-2"><h3 class="h5 mb-1">Dopamine Online</h3><span class="badge text-bg-dark">2022</span></div>
+            <p class="small fw-bold mb-2">Релиз</p><p class="mb-0">Тёмные, R&amp;B-окрашенные текстуры.</p></div></article></div></div></div>
+      </div>
+
+      <h2 class="section-title text-uppercase mt-5 mb-4">Ещё в этот день</h2>
+      <div class="row g-4">
+<div class="col-12 col-md-6 col-lg-4">
+            <article class="artist-card card h-100 bg-transparent text-white border-2 rounded-4 overflow-hidden position-relative">
+              <div class="photo photo--card" data-photo="usedcvnt">
+          <span class="photo__fallback">UC</span>
+          <img class="photo__img" src="images/artists/usedcvnt.jpg" alt="usedcvnt — фото артиста" loading="lazy" onerror="this.remove()">
+        </div>
+              <button class="fav-btn" type="button" data-fav="usedcvnt" aria-pressed="false" aria-label="Добавить usedcvnt в мой лайнап">♥</button>
+              <div class="card-body">
+                <span class="badge artist-card__day text-uppercase">Суббота</span>
+                <h3 class="artist-card__name text-uppercase mt-3 mb-1"><a class="stretched-link" href="artist-usedcvnt.html">usedcvnt</a></h3>
+                <p class="mb-1 opacity-75">Breakcore</p>
+                <p class="small mb-0 opacity-75">17 июля, 19:00–20:30</p>
+              </div>
+            </article>
+          </div>
+      </div>
+
+      <nav class="d-flex justify-content-between gap-3 mt-5" aria-label="Навигация по артистам">
+        <a class="btn btn-outline-primary" href="artist-usedcvnt.html" rel="prev">← usedcvnt</a>
+        <a class="btn btn-outline-primary" href="artist-cynthoni.html" rel="next">Cynthoni →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer bg-dark text-white pt-5 pb-4" id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <p class="footer__brand h4 mb-2">BREAKBIT<span class="header__logo-accent">.</span>FEST</p>
+          <p class="opacity-75 mb-3">Фестиваль брейккора, джангла и драм-н-бейса под открытым небом. Три дня, три вечера, одна площадка.</p>
+          <p class="mb-0"><span class="badge footer__age">16+</span> <span class="small opacity-75 ms-2">16–18 июля 2027</span></p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h2 class="footer__title">Фестиваль</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer__link" href="artists.html">Артисты</a></li>
+            <li><a class="footer__link" href="schedule.html">Расписание</a></li>
+            <li><a class="footer__link" href="tickets.html">Билеты</a></li>
+            <li><a class="footer__link" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h2 class="footer__title">Информация</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer__link" href="contacts.html#map">Как добраться</a></li>
+            <li><a class="footer__link" href="contacts.html#faq">Правила и FAQ</a></li>
+            <li><a class="footer__link" href="tickets.html#tariffs">Кемпинг</a></li>
+            <li><a class="footer__link" href="contacts.html#feedback">Волонтёрам</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <h2 class="footer__title">Контакты</h2>
+          <ul class="list-unstyled mb-0 small">
+            <li class="mb-1"><span class="opacity-75">Общие вопросы:</span> <a class="footer__link d-inline text-break" href="mailto:hello@breakbit.example">hello@breakbit.example</a></li>
+            <li class="mb-1"><span class="opacity-75">Пресса:</span> <a class="footer__link d-inline text-break" href="mailto:press@breakbit.example">press@breakbit.example</a></li>
+            <li class="mb-1"><span class="opacity-75">Телефон:</span> <a class="footer__link d-inline" href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+            <li class="mb-1"><span class="opacity-75">Адрес:</span> Москва, Нагатинская набережная, площадка «Дельта»</li>
+            <li><span class="opacity-75">Горячая линия:</span> ежедневно 10:00–20:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer__line my-4">
+
+      <div class="row g-2 small opacity-75 align-items-center">
+        <div class="col-12 col-md-6">
+          <p class="mb-0">© 2027 BREAKBIT FEST. Все права защищены.</p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="footer__link d-inline me-3" href="privacy.html">Политика конфиденциальности</a>
+          <a class="footer__link d-inline" href="privacy.html#terms">Условия посещения</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="remindModal" tabindex="-1" aria-labelledby="remindModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="remindModalTitle">Напомнить о выступлении</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <form class="needs-validation" id="remind-form" action="#" method="post" novalidate data-success-text="Готово! Напомним о сете за день до выступления.">
+          <div class="modal-body">
+            <p class="mb-3">Артист: <strong id="remind-artist">TOKYOPILL</strong></p>
+            <div class="mb-3">
+              <label for="remind-email" class="form-label">E-mail *</label>
+              <input id="remind-email" name="email" type="email" class="form-control" placeholder="example@mail.ru" required>
+              <div class="invalid-feedback">Введите корректный e-mail.</div>
+            </div>
+            <div class="form-check">
+              <input id="remind-agree" name="agreement" class="form-check-input" type="checkbox" required>
+              <label class="form-check-label" for="remind-agree">Согласен на обработку данных *</label>
+              <div class="invalid-feedback">Нужно ваше согласие.</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-primary">Напомнить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast text-bg-dark border-0" id="siteToast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="siteToastText">Готово!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

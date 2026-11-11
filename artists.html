@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Артисты — BREAKBIT FEST</title>
+  <meta name="description" content="Артисты BREAKBIT FEST: BAKGROUND, Blksmiith, TOKYOPILL, usedcvnt, sewerslvt, Cynthoni.">
+
+  <!-- Шрифты Google Fonts: Unbounded (заголовки) и Onest (текст) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS (локально), затем собственный файл custom.css -->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="page d-flex flex-column">
+
+  <header class="header bg-dark text-white" id="top">
+    <nav class="navbar navbar-expand-lg navbar-dark py-3" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand header__logo" href="index.html">BREAKBIT<span class="header__logo-accent">.</span>FEST</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="artists.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Артисты</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="artists.html">Все артисты</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="artists.html?day=fri">Пятница, 16 июля</a></li>
+                <li><a class="dropdown-item" href="artists.html?day=sat">Суббота, 17 июля</a></li>
+                <li><a class="dropdown-item" href="artists.html?day=sun">Воскресенье, 18 июля</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="schedule.html">Расписание</a></li>
+            <li class="nav-item"><a class="nav-link" href="tickets.html">Билеты</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          </ul>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <a class="btn btn-outline-light btn-sm" href="schedule.html#my-lineup">♥ Мой лайнап <span class="badge text-bg-light" data-fav-count>0</span></a>
+            <a class="btn btn-accent" href="tickets.html">Купить билет</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow-1" id="content">
+    <div class="container py-5">
+    <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Главная</a></li><li class="breadcrumb-item active" aria-current="page">Артисты</li></ol></nav>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+        <div>
+          <h1 class="section-title text-uppercase mb-2">Артисты</h1>
+          <p class="mb-0">Шесть артистов на трёх вечерах. Фильтруйте по жанрам и дням.</p>
+        </div>
+        <a class="btn btn-outline-primary" href="schedule.html">Расписание</a>
+      </div>
+
+      <div class="row g-4">
+        <aside class="col-12 col-lg-3" aria-label="Фильтры">
+          <div class="card sticky-panel border-2 border-dark bg-transparent rounded-4">
+            <div class="card-body">
+              <h2 class="h5 card-title">Фильтры</h2>
+
+              <label class="form-label" for="artist-search">Поиск</label>
+              <div class="input-group mb-3">
+                <span class="input-group-text" aria-hidden="true">🔍</span>
+                <input class="form-control" id="artist-search" type="search" placeholder="Имя артиста">
+              </div>
+
+              <p class="form-label mb-2">Жанр</p>
+              <div class="list-group mb-3" id="genreFilter"><button type="button" class="list-group-item list-group-item-action active" data-genre="all" aria-current="true">Все жанры</button><button type="button" class="list-group-item list-group-item-action" data-genre="breakcore">Breakcore</button><button type="button" class="list-group-item list-group-item-action" data-genre="dnb">Drum & Bass</button><button type="button" class="list-group-item list-group-item-action" data-genre="jungle">Jungle</button><button type="button" class="list-group-item list-group-item-action" data-genre="breakbeat">Breakbeat</button><button type="button" class="list-group-item list-group-item-action" data-genre="ambient">Ambient</button></div>
+
+              <label class="form-label" for="artist-day">День</label>
+              <select class="form-select mb-3" id="artist-day">
+                <option value="all" selected>Все дни</option>
+                <option value="fri">Пятница, 16 июля</option>
+                <option value="sat">Суббота, 17 июля</option>
+                <option value="sun">Воскресенье, 18 июля</option>
+              </select>
+
+              <label class="form-label" for="artist-sort">Сортировка</label>
+              <select class="form-select mb-3" id="artist-sort">
+                <option value="day" selected>По дням фестиваля</option>
+                <option value="name">По алфавиту</option>
+              </select>
+
+              <p class="small mb-3" id="artist-count" aria-live="polite">Найдено артистов: 6</p>
+              <button class="btn btn-outline-primary btn-sm w-100" type="button" id="artist-reset">Сбросить фильтры</button>
+            </div>
+          </div>
+        </aside>
+
+        <section class="col-12 col-lg-9" aria-label="Список артистов">
+          <div class="row g-4" id="artistList">
+<div class="col-12 col-sm-6 col-xl-4 artist-item" data-name="bakground" data-day="fri" data-genres="breakbeat jungle dnb" data-order="0">
+            <article class="artist-card card h-100 bg-transparent text-white border-2 rounded-4 overflow-hidden position-relative">
+              <div class="photo photo--card" data-photo="bakground">
+          <span class="photo__fallback">BG</span>
+          <img class="photo__img" src="images/artists/bakground.jpg" alt="BAKGROUND — фото артиста" loading="lazy" onerror="this.remove()">
+        </div>
+              <button class="fav-btn" type="button" data-fav="bakground" aria-pressed="false" aria-label="Добавить BAKGROUND в мой лайнап">♥</button>
+              <div class="card-body">
+                <span class="badge artist-card__day text-uppercase">Пятница</span>
+                <h3 class="artist-card__name text-uppercase mt-3 mb-1"><a class="stretched-link" href="artist-bakground.html">BAKGROUND</a></h3>
+                <p class="mb-1 opacity-75">Breakbeat · Jungle · Drum & Bass</p>
+                <p class="small mb-0 opacity-75">16 июля, 19:00–20:30</p>
+              </div>
+            </article>
+          </div>
+<div class="col-12 col-sm-6 col-xl-4 artist-item" data-name="blksmiith" data-day="fri" data-genres="breakbeat breakcore jungle" data-order="1">
+            <article class="artist-card card h-100 bg-transparent text-white border-2 rounded-4 overflow-hidden position-relative">
+              <div class="photo photo--card" data-photo="blksmiith">
+          <span class="photo__fallback">BS</span>
+          <img class="photo__img" src="images/artists/blksmiith.jpg" alt="Blksmiith — фото артиста" loading="lazy" onerror="this.remove()">
+        </div>
+              <button class="fav-btn" type="button" data-fav="blksmiith" aria-pressed="false" aria-label="Добавить Blksmiith в мой лайнап">♥</button>
+              <div class="card-body">
+                <span class="badge artist-card__day text-uppercase">Пятница</span>
+                <h3 class="artist-card__name text-uppercase mt-3 mb-1"><a class="stretched-link" href="artist-blksmiith.html">Blksmiith</a></h3>
+                <p class="mb-1 opacity-75">Breakbeat · Breakcore · Jungle</p>
+                <p class="small mb-0 opacity-75">16 июля, 21:00–22:30</p>
+              </div>
+            </article>
+          </div>
+<div class="col-12 col-sm-6 col-xl-4 artist-item" data-name="usedcvnt" data-day="sat" data-genres="breakcore" data-order="2">
+            <article class="artist-card card h-100 bg-transparent text-white border-2 rounded-4 overflow-hidden position-relative">
+              <div class="photo photo--card" data-photo="usedcvnt">
+          <span class="photo__fallback">UC</span>
+          <img class="photo__img" src="images/artists/usedcvnt.jpg" alt="usedcvnt — фото артиста" loading="lazy" onerror="this.remove()">
+        </div>
+              <button class="fav-btn" type="button" data-fav="usedcvnt" aria-pressed="false" aria-label="Добавить usedcvnt в мой лайнап">♥</button>
+              <div class="card-body">
+                <span class="badge artist-card__day text-uppercase">Суббота</span>
+                <h3 class="artist-card__name text-uppercase mt-3 mb-1"><a class="stretched-link" href="artist-usedcvnt.html">usedcvnt</a></h3>
+                <p class="mb-1 opacity-75">Breakcore</p>
+                <p class="small mb-0 opacity-75">17 июля, 19:00–20:30</p>
+              </div>
+            </article>
+          </div>
+<div class="col-12 col-sm-6 col-xl-4 artist-item" data-name="tokyopill" data-day="sat" data-genres="dnb jungle breakcore" data-order="3">
+            <article class="artist-card card h-100 bg-transparent text-white border-2 rounded-4 overflow-hidden position-relative">
+              <div class="photo photo--card" data-photo="tokyopill">
+          <span class="photo__fallback">TP</span>
+          <img class="photo__img" src="images/artists/tokyopill.jpg" alt="TOKYOPILL — фото артиста" loading="lazy" onerror="this.remove()">
+        </div>
+              <button class="fav-btn" type="button" data-fav="tokyopill" aria-pressed="false" aria-label="Добавить TOKYOPILL в мой лайнап">♥</button>
+              <div class="card-body">
+                <span class="badge artist-card__day text-uppercase">Суббота</span>
+                <h3 class="artist-card__name text-uppercase mt-3 mb-1"><a class="stretched-link" href="artist-tokyopill.html">TOKYOPILL</a></h3>
+                <p class="mb-1 opacity-75">Drum & Bass · Jungle · Breakcore</p>
+                <p class="small mb-0 opacity-75">17 июля, 21:00–22:30</p>
+              </div>
+            </article>
+          </div>
+<div class="col-12 col-sm-6 col-xl-4 artist-item" data-name="cynthoni" data-day="sun" data-genres="breakcore ambient" data-order="4">
+            <article class="artist-card card h-100 bg-transparent text-white border-2 rounded-4 overflow-hidden position-relative">
+              <div class="photo photo--card" data-photo="cynthoni">
+          <span class="photo__fallback">CY</span>
+          <img class="photo__img" src="images/artists/cynthoni.jpg" alt="Cynthoni — фото артиста" loading="lazy" onerror="this.remove()">
+        </div>
+              <button class="fav-btn" type="button" data-fav="cynthoni" aria-pressed="false" aria-label="Добавить Cynthoni в мой лайнап">♥</button>
+              <div class="card-body">
+                <span class="badge artist-card__day text-uppercase">Воскресенье</span>
+                <h3 class="artist-card__name text-uppercase mt-3 mb-1"><a class="stretched-link" href="artist-cynthoni.html">Cynthoni</a></h3>
+                <p class="mb-1 opacity-75">Breakcore · Ambient</p>
+                <p class="small mb-0 opacity-75">18 июля, 19:00–20:30</p>
+              </div>
+            </article>
+          </div>
+<div class="col-12 col-sm-6 col-xl-4 artist-item" data-name="sewerslvt" data-day="sun" data-genres="breakcore dnb" data-order="5">
+            <article class="artist-card card h-100 bg-transparent text-white border-2 rounded-4 overflow-hidden position-relative">
+              <div class="photo photo--card" data-photo="sewerslvt">
+          <span class="photo__fallback">Jvnko</span>
+          <img class="photo__img" src="images/artists/sewerslvt.jpg" alt="sewerslvt — маскот jvnko" loading="lazy" onerror="this.remove()">
+        </div>
+              <button class="fav-btn" type="button" data-fav="sewerslvt" aria-pressed="false" aria-label="Добавить sewerslvt в мой лайнап">♥</button>
+              <div class="card-body">
+                <span class="badge artist-card__day text-uppercase">Воскресенье</span>
+                <h3 class="artist-card__name text-uppercase mt-3 mb-1"><a class="stretched-link" href="artist-sewerslvt.html">sewerslvt</a></h3>
+                <p class="mb-1 opacity-75">Breakcore · Drum & Bass</p>
+                <p class="small mb-0 opacity-75">18 июля, 21:00–22:30</p>
+              </div>
+            </article>
+          </div>
+          </div>
+          <div class="alert alert-secondary mt-4 d-none" id="artist-empty" role="status">Ничего не найдено. Измените поиск или фильтры.</div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer bg-dark text-white pt-5 pb-4" id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <p class="footer__brand h4 mb-2">BREAKBIT<span class="header__logo-accent">.</span>FEST</p>
+          <p class="opacity-75 mb-3">Фестиваль брейккора, джангла и драм-н-бейса под открытым небом. Три дня, три вечера, одна площадка.</p>
+          <p class="mb-0"><span class="badge footer__age">16+</span> <span class="small opacity-75 ms-2">16–18 июля 2027</span></p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h2 class="footer__title">Фестиваль</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer__link" href="artists.html">Артисты</a></li>
+            <li><a class="footer__link" href="schedule.html">Расписание</a></li>
+            <li><a class="footer__link" href="tickets.html">Билеты</a></li>
+            <li><a class="footer__link" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h2 class="footer__title">Информация</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer__link" href="contacts.html#map">Как добраться</a></li>
+            <li><a class="footer__link" href="contacts.html#faq">Правила и FAQ</a></li>
+            <li><a class="footer__link" href="tickets.html#tariffs">Кемпинг</a></li>
+            <li><a class="footer__link" href="contacts.html#feedback">Волонтёрам</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <h2 class="footer__title">Контакты</h2>
+          <ul class="list-unstyled mb-0 small">
+            <li class="mb-1"><span class="opacity-75">Общие вопросы:</span> <a class="footer__link d-inline text-break" href="mailto:hello@breakbit.example">hello@breakbit.example</a></li>
+            <li class="mb-1"><span class="opacity-75">Пресса:</span> <a class="footer__link d-inline text-break" href="mailto:press@breakbit.example">press@breakbit.example</a></li>
+            <li class="mb-1"><span class="opacity-75">Телефон:</span> <a class="footer__link d-inline" href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+            <li class="mb-1"><span class="opacity-75">Адрес:</span> Москва, Нагатинская набережная, площадка «Дельта»</li>
+            <li><span class="opacity-75">Горячая линия:</span> ежедневно 10:00–20:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer__line my-4">
+
+      <div class="row g-2 small opacity-75 align-items-center">
+        <div class="col-12 col-md-6">
+          <p class="mb-0">© 2027 BREAKBIT FEST. Все права защищены.</p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="footer__link d-inline me-3" href="privacy.html">Политика конфиденциальности</a>
+          <a class="footer__link d-inline" href="privacy.html#terms">Условия посещения</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast text-bg-dark border-0" id="siteToast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="siteToastText">Готово!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
