@@ -1,0 +1,390 @@
+/* ==========================================================
+   BREAKBIT FEST — собственные стили поверх Bootstrap
+   Основа страницы — классы Bootstrap (сетка, отступы, карточки,
+   кнопки, навигация). Здесь только то, чего в Bootstrap нет:
+   фирменная палитра, шрифты и оформление отдельных блоков (БЭМ).
+   ========================================================== */
+
+/* ---------- Фирменная палитра: кислотный фиолетовый ---------- */
+:root {
+  --violet: #b47cff;        /* фон страницы */
+  --violet-deep: #7a35ff;
+  --lilac: #e4d0ff;
+  --ink: #130a26;           /* тёмный: шапка, подвал, текст */
+  --acid: #d6ff3a;          /* кислотный акцент */
+
+  --font-head: "Unbounded", "Arial Black", Arial, sans-serif;
+  --font-body: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Переопределяем переменные Bootstrap, чтобы его классы
+     (bg-dark, border-dark, text-bg-*) использовали нашу палитру */
+  --bs-body-bg: var(--violet);
+  --bs-body-color: var(--ink);
+  --bs-body-font-family: var(--font-body);
+  --bs-dark-rgb: 19, 10, 38;
+  --bs-border-color: var(--ink);
+  --bs-link-color-rgb: 19, 10, 38;
+  --bs-link-hover-color-rgb: 255, 255, 255;
+}
+
+/* Основная кнопка Bootstrap в цвета проекта */
+.btn-primary {
+  --bs-btn-bg: var(--ink);
+  --bs-btn-border-color: var(--ink);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: var(--acid);
+  --bs-btn-hover-border-color: var(--acid);
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-active-bg: var(--acid);
+  --bs-btn-active-border-color: var(--acid);
+  --bs-btn-active-color: var(--ink);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--ink);
+  --bs-btn-border-color: var(--ink);
+  --bs-btn-hover-bg: var(--ink);
+  --bs-btn-hover-border-color: var(--ink);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--ink);
+  --bs-btn-active-border-color: var(--ink);
+  --bs-btn-active-color: #fff;
+}
+
+/* Кислотная кнопка (в тёмной шапке) */
+.btn-accent {
+  --bs-btn-bg: var(--acid);
+  --bs-btn-border-color: var(--acid);
+  --bs-btn-color: var(--ink);
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+  --bs-btn-hover-color: var(--ink);
+  font-weight: 700;
+}
+
+/* ---------- Страница ---------- */
+.page {
+  min-height: 100vh;
+}
+
+.section-title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+/* ---------- Блок header ---------- */
+.header__logo {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 1.15rem;
+}
+
+.header__logo-accent {
+  color: var(--acid);
+}
+
+/* ---------- Блок hero ---------- */
+.hero__title {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: clamp(2rem, 8.6vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.hero__title-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--ink);
+}
+
+.hero__title-dot {
+  color: #fff;
+}
+
+/* Визуал-заглушка: «хромированная» форма из градиентов */
+.hero__visual {
+  min-height: 320px;
+  border-radius: 50% 50% 50% 50% / 60% 40% 60% 40%;
+  background:
+    radial-gradient(circle at 30% 25%, #fff 0%, rgba(255, 255, 255, 0) 35%),
+    radial-gradient(circle at 70% 75%, var(--acid) 0%, rgba(214, 255, 58, 0) 40%),
+    linear-gradient(145deg, #f1e6ff 0%, #8f7bb5 55%, #2b1b4d 100%);
+  box-shadow: inset -12px -16px 30px rgba(19, 10, 38, 0.4);
+}
+
+.hero__sticker {
+  width: 7rem;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--acid);
+  color: var(--ink);
+  font-size: 0.7rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: normal;
+  transform: rotate(-12deg);
+}
+
+/* ---------- Блок concept ---------- */
+.concept__number {
+  margin-bottom: 1.25rem;
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--acid);
+  -webkit-text-stroke: 1px var(--ink);
+}
+
+/* ---------- Блок lineup и artist-card ---------- */
+.lineup .section-title {
+  color: var(--acid);
+}
+
+.artist-card {
+  border-color: var(--acid);
+}
+
+.artist-card__photo {
+  min-height: 180px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.artist-card__photo--violet { background: var(--violet-deep); color: #fff; }
+.artist-card__photo--lime { background: var(--acid); }
+.artist-card__photo--lilac { background: var(--lilac); }
+
+.artist-card__day {
+  background: var(--acid);
+  color: var(--ink);
+}
+
+.artist-card__name {
+  font-family: var(--font-head);
+  font-weight: 900;
+  font-size: 1.4rem;
+  color: var(--acid);
+}
+
+/* ---------- Блок cta ---------- */
+.cta {
+  background: var(--acid);
+}
+
+/* ---------- Блок footer ---------- */
+.footer__brand {
+  font-family: var(--font-head);
+  font-weight: 900;
+}
+
+
+/* ---------- Адаптивность ---------- */
+@media (min-width: 992px) {
+  .hero__title {
+    font-size: clamp(3rem, 4.8vw, 5rem);
+  }
+
+  .hero__visual {
+    min-height: 460px;
+  }
+}
+
+/* ==========================================================
+   Дополнения для всех страниц сайта
+   ========================================================== */
+
+/* ---------- Общие элементы ---------- */
+.header .nav-link { color: rgba(255, 255, 255, 0.75); }
+.header .nav-link:hover,
+.header .nav-link.active { color: var(--acid); }
+.header .dropdown-menu { --bs-dropdown-bg: var(--ink); --bs-dropdown-link-color: #fff; --bs-dropdown-link-hover-bg: rgba(214, 255, 58, 0.15); --bs-dropdown-link-hover-color: var(--acid); --bs-dropdown-divider-bg: rgba(255,255,255,.2); }
+
+.breadcrumb { --bs-breadcrumb-divider-color: var(--ink); --bs-breadcrumb-item-active-color: var(--ink); }
+.breadcrumb a { color: var(--ink); }
+
+.form-control,
+.form-select { border-color: var(--ink); border-width: 2px; background-color: #fff; color: var(--ink); }
+.form-control:focus,
+.form-select:focus { border-color: var(--ink); box-shadow: 0 0 0 0.25rem rgba(19, 10, 38, 0.25); }
+.form-check-input { border-color: var(--ink); border-width: 2px; }
+.form-check-input:checked { background-color: var(--ink); border-color: var(--ink); }
+.input-group-text { background: var(--lilac); color: var(--ink); border: 2px solid var(--ink); }
+.btn:focus-visible,
+a:focus-visible,
+.nav-link:focus-visible { outline: 3px solid var(--acid); outline-offset: 2px; }
+.page a:focus-visible { outline-color: var(--ink); }
+.header a:focus-visible, .footer a:focus-visible, .lineup a:focus-visible { outline-color: var(--acid); }
+
+.sticky-panel { position: sticky; top: 1rem; }
+@media (max-width: 991.98px) { .sticky-panel { position: static; } }
+
+/* ---------- Полоса прогресса и кнопка «наверх» ---------- */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; z-index: 1100;
+  width: 100%; height: 4px;
+  background: var(--acid);
+  transform: scaleX(0); transform-origin: left;
+  pointer-events: none;
+}
+.to-top {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 1050;
+  width: 3rem; height: 3rem; border: 2px solid var(--ink); border-radius: 50%;
+  background: var(--acid); color: var(--ink); font-weight: 900;
+  opacity: 0; visibility: hidden; transition: opacity 0.2s;
+}
+.to-top--visible { opacity: 1; visibility: visible; }
+
+/* ---------- CD-диск (главный визуал) ---------- */
+.cd { position: relative; width: min(100%, 440px); margin-inline: auto; aspect-ratio: 1; }
+.cd__disc {
+  position: absolute; inset: 0; border-radius: 50%;
+  background:
+    repeating-radial-gradient(circle, rgba(19, 10, 38, 0.1) 0 1px, transparent 1px 5px),
+    conic-gradient(from 20deg, #f1e6ff, #b47cff, #d6ff3a, #7a35ff, #f1e6ff, #8f7bb5, #d6ff3a, #b47cff, #f1e6ff);
+  box-shadow: 0 18px 40px rgba(19, 10, 38, 0.35), inset 0 0 0 6px rgba(255, 255, 255, 0.35);
+  animation: cd-spin 14s linear infinite;
+}
+.cd:hover .cd__disc { animation-duration: 3s; }
+.cd::after { /* блик поверх диска */
+  content: ""; position: absolute; inset: 0; border-radius: 50%; pointer-events: none;
+  background: linear-gradient(120deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 35%, rgba(255,255,255,0) 65%, rgba(255,255,255,0.25) 100%);
+}
+.cd__label {
+  position: absolute; inset: 31%; border-radius: 50%;
+  background: var(--ink); color: var(--acid);
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 5%;
+  text-align: center; box-shadow: 0 0 0 4px rgba(255,255,255,0.5);
+}
+.cd__label-main { font-family: var(--font-head); font-weight: 900; font-size: clamp(0.55rem, 1.9vw, 0.9rem); letter-spacing: 0.04em; line-height: 1.1; }
+.cd__label-sub { font-size: 0.5rem; letter-spacing: 0.12em; opacity: 0.8; }
+.cd__hole {
+  position: absolute; inset: 45.5%; border-radius: 50%;
+  background: var(--violet); box-shadow: inset 0 0 0 3px #fff, 0 0 0 3px var(--ink);
+}
+.cd__sticker {
+  position: absolute; right: 0; bottom: 4%; z-index: 2;
+  width: 6.5rem; height: 6.5rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; text-align: center; white-space: normal;
+  background: var(--acid); color: var(--ink); font-size: 0.75rem; line-height: 1.2; text-transform: uppercase;
+  transform: rotate(-12deg);
+}
+@keyframes cd-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .cd__disc { animation: none; } }
+
+/* ---------- Обратный отсчёт ---------- */
+.countdown { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.countdown__item {
+  min-width: 4.5rem; padding: 0.6rem 0.8rem; border: 2px solid var(--ink); border-radius: 0.75rem;
+  background: var(--ink); color: #fff; text-align: center;
+}
+.countdown__num { display: block; font-family: var(--font-head); font-weight: 900; font-size: 1.5rem; color: var(--acid); }
+.countdown__label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.countdown--done { font-family: var(--font-head); font-weight: 900; }
+
+/* ---------- Карусель дней ---------- */
+.carousel-slide { min-height: 260px; padding: 2.5rem 3.5rem 3.5rem; color: var(--ink); }
+.carousel-slide--fri { background: var(--acid); }
+.carousel-slide--sat { background: var(--lilac); }
+.carousel-slide--sun { background: #fff; }
+.carousel-slide__day { font-family: var(--font-head); font-weight: 900; font-size: clamp(1.2rem, 4vw, 2rem); text-transform: uppercase; }
+.carousel-slide__list { display: grid; gap: 0.75rem; }
+.carousel-slide__artist { display: block; font-family: var(--font-head); font-weight: 900; font-size: 1.25rem; color: var(--ink); text-decoration: none; text-transform: uppercase; }
+.carousel-slide__artist small { display: block; margin-top: 0.15rem; font-family: var(--font-body); font-weight: 400; font-size: 0.85rem; text-transform: none; }
+.carousel-slide__artist:hover { text-decoration: underline; }
+.carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(1); }
+.carousel-indicators [data-bs-target] { background-color: var(--ink); }
+
+/* ---------- Фото артиста ---------- */
+.photo { position: relative; overflow: hidden; background: var(--violet-deep); }
+.photo--card { aspect-ratio: 4 / 3; }
+.photo--large { aspect-ratio: 1; border: 3px solid var(--ink); }
+.photo__fallback {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 900; font-size: 3rem; color: var(--acid);
+  background: repeating-linear-gradient(45deg, #6a2de6 0 14px, var(--violet-deep) 14px 28px);
+}
+.photo__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.photo--large .photo__fallback { font-size: 5rem; }
+
+.fav-btn {
+  position: absolute; top: 0.75rem; right: 0.75rem; z-index: 3;
+  width: 2.5rem; height: 2.5rem; border: 2px solid var(--ink); border-radius: 50%;
+  background: #fff; color: var(--ink); font-size: 1.1rem; line-height: 1;
+}
+.fav-btn[aria-pressed="true"],
+.fav-toggle[aria-pressed="true"] { background: var(--acid); color: var(--ink); }
+.fav-btn--inline { position: static; width: 2.25rem; height: 2.25rem; }
+.fav-btn:hover { background: var(--acid); }
+
+.artist-card__name a { color: var(--acid); text-decoration: none; }
+.artist-title { font-family: var(--font-head); font-weight: 900; font-size: clamp(2rem, 7vw, 3.5rem); line-height: 1; }
+.fact__label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; margin: 0; }
+.fact__value { font-weight: 700; margin: 0; }
+.artist-tabs, .schedule-tabs { --bs-nav-tabs-border-color: var(--ink); --bs-nav-tabs-link-active-bg: var(--ink); --bs-nav-tabs-link-active-color: var(--acid); --bs-nav-tabs-link-active-border-color: var(--ink); --bs-nav-link-color: var(--ink); --bs-nav-link-hover-color: var(--ink); --bs-nav-tabs-link-hover-border-color: var(--ink); font-weight: 700; }
+.setlist { --bs-list-group-bg: transparent; --bs-list-group-border-color: var(--ink); --bs-list-group-color: var(--ink); }
+.setlist .list-group-item { border-width: 0 0 2px; }
+
+/* ---------- Расписание ---------- */
+.schedule { --bs-table-bg: transparent; --bs-table-color: var(--ink); --bs-table-border-color: rgba(19, 10, 38, 0.3); }
+.schedule th, .schedule td { padding: 0.9rem 0.75rem; }
+.schedule__time { white-space: nowrap; font-family: var(--font-head); font-weight: 700; font-size: 0.9rem; }
+.schedule__row--artist { --bs-table-bg: rgba(255, 255, 255, 0.45); font-weight: 700; }
+.schedule__artist { font-family: var(--font-head); text-transform: uppercase; color: var(--ink); text-decoration: none; font-size: 1.05rem; }
+.schedule__artist:hover { text-decoration: underline; }
+.my-lineup__list { --bs-list-group-bg: var(--ink); --bs-list-group-color: #fff; }
+
+/* ---------- Билеты ---------- */
+.tariff__name { font-family: var(--font-head); font-weight: 900; font-size: 1.4rem; }
+.tariff__price { font-family: var(--font-head); font-weight: 900; font-size: 2rem; }
+.summary { margin: 0; }
+.summary__row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.5rem 0; border-bottom: 1px solid rgba(19, 10, 38, 0.25); }
+.summary__row dt { font-weight: 400; }
+.summary__row dd { margin: 0; font-weight: 700; text-align: right; }
+.summary__row--total { border-bottom: 0; font-size: 1.2rem; }
+
+.eticket { padding: 1.25rem; border: 2px dashed var(--ink); border-radius: 1rem; background: var(--lilac); color: var(--ink); }
+.eticket__brand { font-family: var(--font-head); font-weight: 900; font-size: 1.4rem; margin-bottom: 0.25rem; }
+.eticket__dates { font-size: 0.85rem; margin-bottom: 1rem; }
+.eticket__list { margin: 0 0 1rem; }
+.eticket__list div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.35rem 0; border-bottom: 1px solid rgba(19, 10, 38, 0.2); }
+.eticket__list dt { font-weight: 400; }
+.eticket__list dd { margin: 0; font-weight: 700; text-align: right; }
+.eticket__code { height: 56px; margin-bottom: 1rem; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 5px, var(--ink) 5px 6px, transparent 6px 10px, var(--ink) 10px 14px, transparent 14px 16px); }
+
+@media print {
+  body * { visibility: hidden; }
+  .ticket-print, .ticket-print * { visibility: visible; }
+  .ticket-print { position: absolute; left: 0; top: 0; width: 100%; border: 0; }
+  .ticket-print .modal-header, .ticket-print .modal-footer { display: none; }
+  .scroll-progress, .to-top { display: none; }
+}
+
+/* ---------- Контакты ---------- */
+.map iframe { border: 3px solid var(--ink); border-radius: 1rem; }
+.faq { --bs-accordion-bg: transparent; --bs-accordion-border-color: var(--ink); --bs-accordion-btn-color: var(--ink); --bs-accordion-active-color: var(--ink); --bs-accordion-active-bg: var(--acid); --bs-accordion-color: var(--ink); --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(19, 10, 38, 0.25); --bs-accordion-border-width: 2px; }
+.faq .accordion-button { font-weight: 700; background: transparent; }
+.faq .accordion-button:not(.collapsed) { background: var(--acid); box-shadow: none; }
+
+/* ---------- Подвал ---------- */
+.footer__title { margin-bottom: 0.75rem; font-family: var(--font-head); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--acid); }
+.footer__link { display: block; padding: 0.15rem 0; color: #fff; text-decoration: none; }
+.footer__link:hover { color: var(--acid); text-decoration: underline; }
+.footer__line { border-color: rgba(255, 255, 255, 0.25); opacity: 1; }
+.footer__age { background: var(--acid); color: var(--ink); }
+.footer .footer__link.d-inline { display: inline !important; }
+.lineup .footer__link { color: var(--acid); }
+
+.btn-link { --bs-btn-color: var(--ink); --bs-btn-hover-color: #fff; }
+
+/* ---------- Правки контраста ---------- */
+.artist-card.bg-transparent { background-color: var(--ink) !important; }
+.list-group { --bs-list-group-active-bg: var(--ink); --bs-list-group-active-border-color: var(--ink); --bs-list-group-active-color: var(--acid); }
+#genreFilter .list-group-item { color: var(--ink); background: rgba(255, 255, 255, 0.5); }
+#genreFilter .list-group-item.active { color: var(--acid); background: var(--ink); }

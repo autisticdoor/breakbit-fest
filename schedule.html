@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Расписание — BREAKBIT FEST</title>
+  <meta name="description" content="Расписание BREAKBIT FEST: пятница, суббота, воскресенье. Сеты артистов, сцены, время.">
+
+  <!-- Шрифты Google Fonts: Unbounded (заголовки) и Onest (текст) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS (локально), затем собственный файл custom.css -->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="page d-flex flex-column">
+
+  <header class="header bg-dark text-white" id="top">
+    <nav class="navbar navbar-expand-lg navbar-dark py-3" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand header__logo" href="index.html">BREAKBIT<span class="header__logo-accent">.</span>FEST</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="artists.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Артисты</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="artists.html">Все артисты</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="artists.html?day=fri">Пятница, 16 июля</a></li>
+                <li><a class="dropdown-item" href="artists.html?day=sat">Суббота, 17 июля</a></li>
+                <li><a class="dropdown-item" href="artists.html?day=sun">Воскресенье, 18 июля</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="schedule.html">Расписание</a></li>
+            <li class="nav-item"><a class="nav-link" href="tickets.html">Билеты</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          </ul>
+          <div class="d-flex flex-wrap align-items-center gap-2">
+            <a class="btn btn-outline-light btn-sm" href="schedule.html#my-lineup">♥ Мой лайнап <span class="badge text-bg-light" data-fav-count>0</span></a>
+            <a class="btn btn-accent" href="tickets.html">Купить билет</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-grow-1" id="content">
+    <div class="container py-5">
+    <nav aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="index.html">Главная</a></li><li class="breadcrumb-item active" aria-current="page">Расписание</li></ol></nav>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+        <div>
+          <h1 class="section-title text-uppercase mb-2">Расписание</h1>
+          <p class="mb-0">Переключайтесь между днями и отмечайте ♥ сеты, которые не хотите пропустить.</p>
+        </div>
+        <button class="btn btn-outline-primary" type="button" data-ics="festival">Добавить фестиваль в календарь</button>
+      </div>
+
+      <ul class="nav nav-tabs schedule-tabs" id="dayTabs" role="tablist"><li class="nav-item" role="presentation"><button class="nav-link active" id="tab-fri" data-bs-toggle="tab" data-bs-target="#pane-fri" type="button" role="tab" aria-controls="pane-fri" aria-selected="true">Пятница <span class="d-none d-sm-inline">· 16 июля</span></button></li><li class="nav-item" role="presentation"><button class="nav-link" id="tab-sat" data-bs-toggle="tab" data-bs-target="#pane-sat" type="button" role="tab" aria-controls="pane-sat" aria-selected="false">Суббота <span class="d-none d-sm-inline">· 17 июля</span></button></li><li class="nav-item" role="presentation"><button class="nav-link" id="tab-sun" data-bs-toggle="tab" data-bs-target="#pane-sun" type="button" role="tab" aria-controls="pane-sun" aria-selected="false">Воскресенье <span class="d-none d-sm-inline">· 18 июля</span></button></li></ul>
+      <div class="tab-content schedule-box pt-3">
+      <div class="tab-pane fade show active" id="pane-fri" role="tabpanel" aria-labelledby="tab-fri" tabindex="0">
+        <div class="table-responsive"><table class="table schedule align-middle mb-0">
+          <caption class="visually-hidden">Расписание: Пятница, 16 июля</caption>
+          <thead><tr><th scope="col">Время</th><th scope="col">Сцена</th><th scope="col">Событие</th><th scope="col"><span class="visually-hidden">Мой лайнап</span></th></tr></thead>
+          <tbody><tr><th scope="row" class="schedule__time">14:00–15:00</th><td>Вход</td><td>Открытие площадки</td><td class="text-end"></td></tr><tr><th scope="row" class="schedule__time">15:00–18:30</th><td>Lounge</td><td>Резиденты BREAKBIT: DJ-сеты</td><td class="text-end"></td></tr><tr class="schedule__row--artist"><th scope="row" class="schedule__time">19:00–20:30</th><td>Main</td><td><a class="schedule__artist" href="artist-bakground.html">BAKGROUND</a><span class="small d-block opacity-75">Breakbeat · Jungle · Drum & Bass</span></td><td class="text-end"><button class="fav-btn fav-btn--inline" type="button" data-fav="bakground" aria-pressed="false" aria-label="Добавить BAKGROUND в мой лайнап">♥</button></td></tr><tr><th scope="row" class="schedule__time">20:30–21:00</th><td>Main</td><td>Перерыв и световое шоу</td><td class="text-end"></td></tr><tr class="schedule__row--artist"><th scope="row" class="schedule__time">21:00–22:30</th><td>Main</td><td><a class="schedule__artist" href="artist-blksmiith.html">Blksmiith</a><span class="small d-block opacity-75">Breakbeat · Breakcore · Jungle</span></td><td class="text-end"><button class="fav-btn fav-btn--inline" type="button" data-fav="blksmiith" aria-pressed="false" aria-label="Добавить Blksmiith в мой лайнап">♥</button></td></tr><tr><th scope="row" class="schedule__time">22:30–00:00</th><td>Lounge</td><td>After-hours: резиденты BREAKBIT</td><td class="text-end"></td></tr></tbody></table></div>
+      </div>
+      <div class="tab-pane fade" id="pane-sat" role="tabpanel" aria-labelledby="tab-sat" tabindex="0">
+        <div class="table-responsive"><table class="table schedule align-middle mb-0">
+          <caption class="visually-hidden">Расписание: Суббота, 17 июля</caption>
+          <thead><tr><th scope="col">Время</th><th scope="col">Сцена</th><th scope="col">Событие</th><th scope="col"><span class="visually-hidden">Мой лайнап</span></th></tr></thead>
+          <tbody><tr><th scope="row" class="schedule__time">14:00–15:00</th><td>Вход</td><td>Открытие площадки</td><td class="text-end"></td></tr><tr><th scope="row" class="schedule__time">15:00–18:30</th><td>Lounge</td><td>Резиденты BREAKBIT: DJ-сеты</td><td class="text-end"></td></tr><tr class="schedule__row--artist"><th scope="row" class="schedule__time">19:00–20:30</th><td>Main</td><td><a class="schedule__artist" href="artist-usedcvnt.html">usedcvnt</a><span class="small d-block opacity-75">Breakcore</span></td><td class="text-end"><button class="fav-btn fav-btn--inline" type="button" data-fav="usedcvnt" aria-pressed="false" aria-label="Добавить usedcvnt в мой лайнап">♥</button></td></tr><tr><th scope="row" class="schedule__time">20:30–21:00</th><td>Main</td><td>Перерыв и световое шоу</td><td class="text-end"></td></tr><tr class="schedule__row--artist"><th scope="row" class="schedule__time">21:00–22:30</th><td>Main</td><td><a class="schedule__artist" href="artist-tokyopill.html">TOKYOPILL</a><span class="small d-block opacity-75">Drum & Bass · Jungle · Breakcore</span></td><td class="text-end"><button class="fav-btn fav-btn--inline" type="button" data-fav="tokyopill" aria-pressed="false" aria-label="Добавить TOKYOPILL в мой лайнап">♥</button></td></tr><tr><th scope="row" class="schedule__time">22:30–00:00</th><td>Lounge</td><td>After-hours: резиденты BREAKBIT</td><td class="text-end"></td></tr></tbody></table></div>
+      </div>
+      <div class="tab-pane fade" id="pane-sun" role="tabpanel" aria-labelledby="tab-sun" tabindex="0">
+        <div class="table-responsive"><table class="table schedule align-middle mb-0">
+          <caption class="visually-hidden">Расписание: Воскресенье, 18 июля</caption>
+          <thead><tr><th scope="col">Время</th><th scope="col">Сцена</th><th scope="col">Событие</th><th scope="col"><span class="visually-hidden">Мой лайнап</span></th></tr></thead>
+          <tbody><tr><th scope="row" class="schedule__time">14:00–15:00</th><td>Вход</td><td>Открытие площадки</td><td class="text-end"></td></tr><tr><th scope="row" class="schedule__time">15:00–18:30</th><td>Lounge</td><td>Резиденты BREAKBIT: DJ-сеты</td><td class="text-end"></td></tr><tr class="schedule__row--artist"><th scope="row" class="schedule__time">19:00–20:30</th><td>Main</td><td><a class="schedule__artist" href="artist-cynthoni.html">Cynthoni</a><span class="small d-block opacity-75">Breakcore · Ambient</span></td><td class="text-end"><button class="fav-btn fav-btn--inline" type="button" data-fav="cynthoni" aria-pressed="false" aria-label="Добавить Cynthoni в мой лайнап">♥</button></td></tr><tr><th scope="row" class="schedule__time">20:30–21:00</th><td>Main</td><td>Перерыв и световое шоу</td><td class="text-end"></td></tr><tr class="schedule__row--artist"><th scope="row" class="schedule__time">21:00–22:30</th><td>Main</td><td><a class="schedule__artist" href="artist-sewerslvt.html">sewerslvt</a><span class="small d-block opacity-75">Breakcore · Drum & Bass</span></td><td class="text-end"><button class="fav-btn fav-btn--inline" type="button" data-fav="sewerslvt" aria-pressed="false" aria-label="Добавить sewerslvt в мой лайнап">♥</button></td></tr><tr><th scope="row" class="schedule__time">22:30–23:30</th><td>Main</td><td>Финал: закрытие фестиваля</td><td class="text-end"></td></tr></tbody></table></div>
+      </div>
+      </div>
+
+      <section class="my-lineup mt-5" id="my-lineup" aria-labelledby="my-lineup-title">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
+          <h2 class="section-title text-uppercase mb-0" id="my-lineup-title">Мой лайнап</h2>
+          <button class="btn btn-primary" type="button" data-ics="mine" id="my-ics">Скачать мои сеты в календарь</button>
+        </div>
+        <div class="alert alert-secondary mb-3" id="my-empty" role="status">Пока пусто. Нажмите ♥ у артиста, чтобы добавить его сет в свой план.</div>
+        <ul class="list-group my-lineup__list" id="my-list"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer bg-dark text-white pt-5 pb-4" id="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-lg-4">
+          <p class="footer__brand h4 mb-2">BREAKBIT<span class="header__logo-accent">.</span>FEST</p>
+          <p class="opacity-75 mb-3">Фестиваль брейккора, джангла и драм-н-бейса под открытым небом. Три дня, три вечера, одна площадка.</p>
+          <p class="mb-0"><span class="badge footer__age">16+</span> <span class="small opacity-75 ms-2">16–18 июля 2027</span></p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h2 class="footer__title">Фестиваль</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer__link" href="artists.html">Артисты</a></li>
+            <li><a class="footer__link" href="schedule.html">Расписание</a></li>
+            <li><a class="footer__link" href="tickets.html">Билеты</a></li>
+            <li><a class="footer__link" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h2 class="footer__title">Информация</h2>
+          <ul class="list-unstyled mb-0">
+            <li><a class="footer__link" href="contacts.html#map">Как добраться</a></li>
+            <li><a class="footer__link" href="contacts.html#faq">Правила и FAQ</a></li>
+            <li><a class="footer__link" href="tickets.html#tariffs">Кемпинг</a></li>
+            <li><a class="footer__link" href="contacts.html#feedback">Волонтёрам</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <h2 class="footer__title">Контакты</h2>
+          <ul class="list-unstyled mb-0 small">
+            <li class="mb-1"><span class="opacity-75">Общие вопросы:</span> <a class="footer__link d-inline text-break" href="mailto:hello@breakbit.example">hello@breakbit.example</a></li>
+            <li class="mb-1"><span class="opacity-75">Пресса:</span> <a class="footer__link d-inline text-break" href="mailto:press@breakbit.example">press@breakbit.example</a></li>
+            <li class="mb-1"><span class="opacity-75">Телефон:</span> <a class="footer__link d-inline" href="tel:+74950000000">+7 (495) 000-00-00</a></li>
+            <li class="mb-1"><span class="opacity-75">Адрес:</span> Москва, Нагатинская набережная, площадка «Дельта»</li>
+            <li><span class="opacity-75">Горячая линия:</span> ежедневно 10:00–20:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="footer__line my-4">
+
+      <div class="row g-2 small opacity-75 align-items-center">
+        <div class="col-12 col-md-6">
+          <p class="mb-0">© 2027 BREAKBIT FEST. Все права защищены.</p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="footer__link d-inline me-3" href="privacy.html">Политика конфиденциальности</a>
+          <a class="footer__link d-inline" href="privacy.html#terms">Условия посещения</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast text-bg-dark border-0" id="siteToast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="siteToastText">Готово!</div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
